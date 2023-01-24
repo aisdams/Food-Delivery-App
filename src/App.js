@@ -14,6 +14,7 @@ import BannerName from "./Components/BannerName";
 import SubMenuContainer from "./Components/SubMenuContainer";
 import MenuCard from "./Components/MenuCard";
 import { MenuItems, Items } from "./Components/Data";
+import ItemCard from "./Components/ItemCard";
 
 function App() {
   useEffect(() => {
@@ -73,7 +74,9 @@ function App() {
                   </div>
                 ))}
             </div>
-            <div className="dishitemContainer"></div>
+            <div className="dishitemContainer">
+              <ItemCard imgSrc={} name={} ratings={} price={} />
+            </div>
           </div>
         </div>
         <div className="rightMenu"></div>

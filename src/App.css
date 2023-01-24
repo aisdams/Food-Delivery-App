@@ -477,3 +477,16 @@ main {
 .rowMenuCard.active .loadMenu .MuiSvgIcon-root {
   color: #f8901c;
 }
+
+.dishitemContainer {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.itemCard {
+  width: 160px;
+  height: 180px;
+  position: relative;
+}
