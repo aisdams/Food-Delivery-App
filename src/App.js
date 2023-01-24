@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import BannerName from "./Components/BannerName";
 import SubMenuContainer from "./Components/SubMenuContainer";
 import MenuCard from "./Components/MenuCard";
+import { MenuItems, Items } from "./Components/Data";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,18 @@ function App() {
     }
 
     menuLi.forEach((n) => n.addEventListener("click", setMenuActive));
+
+    // MenuCard Active toggle
+    const menuCards = document
+      .querySelector(".rowContainer")
+      .querySelectorAll(".rowMenuCard");
+
+    function setMenuCardActive() {
+      menuCards.forEach((n) => n.classList.remove("active"));
+      this.classList.add("active");
+    }
+
+    menuCards.forEach((n) => n.addEventListener("click", setMenuCardActive));
   }, []);
 
   return (
@@ -49,14 +62,16 @@ function App() {
               <SubMenuContainer name={"Menu Category"} />
             </div>
             <div className="rowContainer">
-              <div>
-                <MenuCard
-                  imgSrc={
-                    "https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Fburger3.png?alt=media&token=0ebe8311-6378-411b-9b6e-d7a6d2a106a2"
-                  }
-                  name={"Burger"}
-                />
-              </div>
+              {MenuItems &&
+                MenuItems.map((data) => (
+                  <div key={data.id}>
+                    <MenuCard
+                      imgSrc={data.imgSrc}
+                      name={data.name}
+                      isActive={data.id === 1 ? true : false}
+                    />
+                  </div>
+                ))}
             </div>
             <div className="dishitemContainer"></div>
           </div>

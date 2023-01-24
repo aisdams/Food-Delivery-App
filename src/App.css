@@ -381,7 +381,7 @@ main {
   padding: 10px 0;
 }
 
-.rowContainer::-webkit-scrollbar{
+.rowContainer::-webkit-scrollbar {
   display: none;
 }
 
@@ -397,9 +397,14 @@ main {
   flex-direction: column;
   padding: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  transition: .5s;
+  transition: 0.5s;
   cursor: pointer;
   margin-right: 12px;
+}
+
+.rowMenuCard:hover,
+.rowMenuCard.active {
+  background: #f8901c;
 }
 
 .rowMenuCard .imgBox {
@@ -413,8 +418,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
+}
+
+.rowMenuCard:hover .imgBox,
+.rowMenuCard.active .imgBox {
+  background: #fff;
 }
 
 .rowMenuCard .imgBox img {
@@ -423,11 +433,23 @@ main {
   height: 100%;
 }
 
+.rowMenuCard:hover .imgBox img,
+.rowMenuCard.active .imgBox img {
+  width: 80%;
+  height: 80%;
+  transition: .5s;
+}
+
 .rowMenuCard h3 {
   color: #f8901c;
   font-size: 14px;
   font-weight: 500;
-  transition: .5s;
+  transition: 0.5s;
+}
+
+.rowMenuCard:hover h3,
+.rowMenuCard.active h3 {
+  color: #faf9fb;
 }
 
 .rowMenuCard .loadMenu {
@@ -438,10 +460,20 @@ main {
   align-content: center;
   border-radius: 5px;
   background: #f8901c;
-  transition: .5s;
+  transition: 0.5s;
+}
+
+.rowMenuCard:hover .loadMenu,
+.rowMenuCard.active .loadMenu {
+  background: #fff;
 }
 
 .rowMenuCard .loadMenu .MuiSvgIcon-root {
   font-size: 18px;
   color: #faf9fb;
+}
+
+.rowMenuCard:hover .loadMenu .MuiSvgIcon-root,
+.rowMenuCard.active .loadMenu .MuiSvgIcon-root {
+  color: #f8901c;
 }
